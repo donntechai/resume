@@ -42,10 +42,12 @@ body {
 
 body {
   margin: 0;
-  background:
-    radial-gradient(1200px 500px at 15% -10%, rgba(125, 211, 252, 0.25), transparent 60%),
-    radial-gradient(900px 450px at 90% 0%, rgba(167, 139, 250, 0.22), transparent 55%),
-    var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(1200px 720px at 20% 0, rgba(125, 211, 252, 0.2), transparent 70%),
+    radial-gradient(1000px 640px at 85% 0, rgba(167, 139, 250, 0.18), transparent 70%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: var(--text);
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans",
     "Liberation Sans", sans-serif;
@@ -173,23 +175,43 @@ a:hover {
   padding-bottom: 30px;
 }
 
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 919.98px) {
+  .col {
+    display: contents;
+  }
+
+  #summary {
+    order: 1;
+  }
+  #competencies {
+    order: 2;
+  }
+  #projects {
+    order: 3;
+  }
+  #skills {
+    order: 4;
+  }
+  #experience {
+    order: 5;
+  }
+  #strengths {
+    order: 6;
+  }
+  #positioning {
+    order: 7;
+  }
+}
+
 @media (min-width: 920px) {
   .grid {
     grid-template-columns: 1.3fr 1fr;
-    align-items: start;
-  }
-
-  #summary,
-  #projects,
-  #experience,
-  #positioning {
-    grid-column: 1 / 2;
-  }
-
-  #competencies,
-  #skills,
-  #strengths {
-    grid-column: 2 / 3;
   }
 }
 
